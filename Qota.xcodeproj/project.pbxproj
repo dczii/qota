@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12B11EB6B2801EBAB5D51788 /* QotaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3197B1AADE7B04878ED9F /* QotaApp.swift */; };
+		F62CE60FAF68308F44301522 /* ClaudeCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D794B49B99D50293C69F629 /* ClaudeCredentials.swift */; };
+		A6637C31F960E814757C8470 /* CursorCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764866BF4E6EAD6EB35AA24 /* CursorCredentials.swift */; };
+		9EC47183810FA5690434F8FA /* KeychainPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB8E8AABEE161507BAD164 /* KeychainPassword.swift */; };
+		70164AE05976F39B50ACCA21 /* HUDPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E46B4685A84A35AB08D52 /* HUDPanel.swift */; };
+		131E38CBBBBBC68EB6929BC1 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEC2E75E231D6FA1BA8515 /* HUDView.swift */; };
+		EEABEA60965B5258B3201C7A /* MenuBarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF580B730B30254C76C116C5 /* MenuBarLabel.swift */; };
+		A8160597A052E1F9776ED3E2 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6168B0944F591CFB79FE2701 /* MenuBarView.swift */; };
+		3B27A56E6BE17FE1732830BE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7589F025E96029E0804E635 /* Models.swift */; };
+		738BB8E0F326861D1FA59467 /* ClaudeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F603ADA3A2E50419F6114 /* ClaudeProvider.swift */; };
+		66819DB485EFD3D1BB6A55BA /* CodexProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A95459A5E41C1383DBD34 /* CodexProvider.swift */; };
+		ABE5FAD3E918A44ABA2922B5 /* CodexRPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C285222E4E5C789586D3A /* CodexRPCClient.swift */; };
+		1239B2016924CB454CB28E56 /* CursorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13119524CB2B28C808903779 /* CursorProvider.swift */; };
+		EA2F029C68580314480E5F3F /* UsageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B29A7476F5926D81BE33C /* UsageProvider.swift */; };
+		4BA9F794DA73F19F239C03CC /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F058F9C39AB60B36A7D2E3E /* Preferences.swift */; };
+		8AD1ADFFF10D77BCC7D51676 /* UsageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652833021A6C45A7779E8387 /* UsageStore.swift */; };
+		F1A745C0710F217CC70D90F6 /* BinaryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64154DAA47634999346F99 /* BinaryLocator.swift */; };
+		6454C7CA027F3CCA811A7B0A /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222F9D2426FDC080CAEC24D /* Formatters.swift */; };
+		5E3690674BEF64A60D2967CE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6A15F90A5D57D01BE35A5 /* HTTPClient.swift */; };
+		B61399F46180D3587684A150 /* JSONFlex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361281C6B92FEACF50338 /* JSONFlex.swift */; };
+		339D1619AB010865B7E0BEC4 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA160366FD51CAF7259C249 /* ProcessRunner.swift */; };
+		73410EC3B41C2406BC13D468 /* UsageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD7831804FD5AE2AC8AE8D /* UsageBar.swift */; };
+		04A7814E4EEC70DE7D6C41B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D562B3E40B6C9EC53F38F07 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5CF3197B1AADE7B04878ED9F /* QotaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QotaApp.swift; sourceTree = "<group>"; };
+		5D794B49B99D50293C69F629 /* ClaudeCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeCredentials.swift; sourceTree = "<group>"; };
+		7764866BF4E6EAD6EB35AA24 /* CursorCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorCredentials.swift; sourceTree = "<group>"; };
+		5FCB8E8AABEE161507BAD164 /* KeychainPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPassword.swift; sourceTree = "<group>"; };
+		1F4E46B4685A84A35AB08D52 /* HUDPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDPanel.swift; sourceTree = "<group>"; };
+		FACEC2E75E231D6FA1BA8515 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		EF580B730B30254C76C116C5 /* MenuBarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarLabel.swift; sourceTree = "<group>"; };
+		6168B0944F591CFB79FE2701 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		A7589F025E96029E0804E635 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B34F603ADA3A2E50419F6114 /* ClaudeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeProvider.swift; sourceTree = "<group>"; };
+		AB7A95459A5E41C1383DBD34 /* CodexProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexProvider.swift; sourceTree = "<group>"; };
+		7E4C285222E4E5C789586D3A /* CodexRPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexRPCClient.swift; sourceTree = "<group>"; };
+		13119524CB2B28C808903779 /* CursorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorProvider.swift; sourceTree = "<group>"; };
+		103B29A7476F5926D81BE33C /* UsageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageProvider.swift; sourceTree = "<group>"; };
+		3F058F9C39AB60B36A7D2E3E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		652833021A6C45A7779E8387 /* UsageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStore.swift; sourceTree = "<group>"; };
+		EE64154DAA47634999346F99 /* BinaryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryLocator.swift; sourceTree = "<group>"; };
+		5222F9D2426FDC080CAEC24D /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		8DA6A15F90A5D57D01BE35A5 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		579361281C6B92FEACF50338 /* JSONFlex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFlex.swift; sourceTree = "<group>"; };
+		EDA160366FD51CAF7259C249 /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		55DD7831804FD5AE2AC8AE8D /* UsageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBar.swift; sourceTree = "<group>"; };
+		F5BF48AA40CAD7891EB709FC /* Qota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qota.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D562B3E40B6C9EC53F38F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AAF0FFB101CFE2B72D7FEC0 /* Qota.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Qota.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5928955287B8089ED2177128 = {
+			isa = PBXGroup;
+			children = (
+				095FEE2E633C50D24407F2D6 /* Qota */,
+				BF7A2D27A78D590BDEF15AF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF7A2D27A78D590BDEF15AF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5BF48AA40CAD7891EB709FC /* Qota.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		095FEE2E633C50D24407F2D6 /* Qota */ = {
+			isa = PBXGroup;
+			children = (
+				FE910D29D648D8F2EA669AEF /* App */,
+				7628CD963D4A815141D0AF7D /* HUD */,
+				0757391C49AC6FE33FFE5834 /* MenuBar */,
+				127F191098C436A42618597D /* Store */,
+				9CF43B31E8845D861542A38E /* Models */,
+				95EE3BB820B2F18F07D46948 /* Support */,
+				5FA2C5F77DB14AB8F5DBCE4C /* Auth */,
+				8CB58D1BCE419A87308D884C /* Providers */,
+				8D562B3E40B6C9EC53F38F07 /* Assets.xcassets */,
+				2AAF0FFB101CFE2B72D7FEC0 /* Qota.entitlements */,
+			);
+			path = Qota;
+			sourceTree = "<group>";
+		};
+		FE910D29D648D8F2EA669AEF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3197B1AADE7B04878ED9F /* QotaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7628CD963D4A815141D0AF7D /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E46B4685A84A35AB08D52 /* HUDPanel.swift */,
+				FACEC2E75E231D6FA1BA8515 /* HUDView.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		0757391C49AC6FE33FFE5834 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				EF580B730B30254C76C116C5 /* MenuBarLabel.swift */,
+				6168B0944F591CFB79FE2701 /* MenuBarView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		127F191098C436A42618597D /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3F058F9C39AB60B36A7D2E3E /* Preferences.swift */,
+				652833021A6C45A7779E8387 /* UsageStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		9CF43B31E8845D861542A38E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7589F025E96029E0804E635 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95EE3BB820B2F18F07D46948 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EE64154DAA47634999346F99 /* BinaryLocator.swift */,
+				5222F9D2426FDC080CAEC24D /* Formatters.swift */,
+				8DA6A15F90A5D57D01BE35A5 /* HTTPClient.swift */,
+				579361281C6B92FEACF50338 /* JSONFlex.swift */,
+				EDA160366FD51CAF7259C249 /* ProcessRunner.swift */,
+				55DD7831804FD5AE2AC8AE8D /* UsageBar.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5FA2C5F77DB14AB8F5DBCE4C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5D794B49B99D50293C69F629 /* ClaudeCredentials.swift */,
+				7764866BF4E6EAD6EB35AA24 /* CursorCredentials.swift */,
+				5FCB8E8AABEE161507BAD164 /* KeychainPassword.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8CB58D1BCE419A87308D884C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B34F603ADA3A2E50419F6114 /* ClaudeProvider.swift */,
+				AB7A95459A5E41C1383DBD34 /* CodexProvider.swift */,
+				7E4C285222E4E5C789586D3A /* CodexRPCClient.swift */,
+				13119524CB2B28C808903779 /* CursorProvider.swift */,
+				103B29A7476F5926D81BE33C /* UsageProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AEFBAE01D2DFD981F7DA7D /* Qota */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943EE526FAB226BDB432EC2D /* Build configuration list for PBXNativeTarget "Qota" */;
+			buildPhases = (
+				F2AB5FB218DA8B84623F4557 /* Sources */,
+				4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */,
+				55B558C7EF820E6E00E5993B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Qota;
+			productName = Qota;
+			productReference = F5BF48AA40CAD7891EB709FC /* Qota.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					42AEFBAE01D2DFD981F7DA7D = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 026952D30E18636895045249 /* Build configuration list for PBXProject "Qota" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5928955287B8089ED2177128;
+			productRefGroup = BF7A2D27A78D590BDEF15AF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42AEFBAE01D2DFD981F7DA7D /* Qota */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B558C7EF820E6E00E5993B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A7814E4EEC70DE7D6C41B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2AB5FB218DA8B84623F4557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B11EB6B2801EBAB5D51788 /* QotaApp.swift in Sources */,
+				F62CE60FAF68308F44301522 /* ClaudeCredentials.swift in Sources */,
+				A6637C31F960E814757C8470 /* CursorCredentials.swift in Sources */,
+				9EC47183810FA5690434F8FA /* KeychainPassword.swift in Sources */,
+				70164AE05976F39B50ACCA21 /* HUDPanel.swift in Sources */,
+				131E38CBBBBBC68EB6929BC1 /* HUDView.swift in Sources */,
+				EEABEA60965B5258B3201C7A /* MenuBarLabel.swift in Sources */,
+				A8160597A052E1F9776ED3E2 /* MenuBarView.swift in Sources */,
+				3B27A56E6BE17FE1732830BE /* Models.swift in Sources */,
+				738BB8E0F326861D1FA59467 /* ClaudeProvider.swift in Sources */,
+				66819DB485EFD3D1BB6A55BA /* CodexProvider.swift in Sources */,
+				ABE5FAD3E918A44ABA2922B5 /* CodexRPCClient.swift in Sources */,
+				1239B2016924CB454CB28E56 /* CursorProvider.swift in Sources */,
+				EA2F029C68580314480E5F3F /* UsageProvider.swift in Sources */,
+				4BA9F794DA73F19F239C03CC /* Preferences.swift in Sources */,
+				8AD1ADFFF10D77BCC7D51676 /* UsageStore.swift in Sources */,
+				F1A745C0710F217CC70D90F6 /* BinaryLocator.swift in Sources */,
+				6454C7CA027F3CCA811A7B0A /* Formatters.swift in Sources */,
+				5E3690674BEF64A60D2967CE /* HTTPClient.swift in Sources */,
+				B61399F46180D3587684A150 /* JSONFlex.swift in Sources */,
+				339D1619AB010865B7E0BEC4 /* ProcessRunner.swift in Sources */,
+				73410EC3B41C2406BC13D468 /* UsageBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B74382A4D110BEFC1DEB55E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F901A40D62D95EAB754CE15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		683105B965893FCC643C4ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Qota/Qota.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Qota;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Qota contributors";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.qota;
+				PRODUCT_NAME = Qota;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+
+			};
+			name = Debug;
+		};
+		4DC7B479A29173674AFD7BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Qota/Qota.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Qota;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Qota contributors";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.qota;
+				PRODUCT_NAME = Qota;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		026952D30E18636895045249 /* Build configuration list for PBXProject "Qota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B74382A4D110BEFC1DEB55E4 /* Debug */,
+				F901A40D62D95EAB754CE15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		943EE526FAB226BDB432EC2D /* Build configuration list for PBXNativeTarget "Qota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683105B965893FCC643C4ECF /* Debug */,
+				4DC7B479A29173674AFD7BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
