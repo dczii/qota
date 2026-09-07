@@ -2,15 +2,23 @@
 # Recreate AppIcon.png from the text sidecar when the binary is missing.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PNG="${ROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png"
-B64="${ROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64"
+DIR="${ROOT}/Qota/Assets.xcassets/AppIcon.appiconset"
+PNG="${DIR}/AppIcon.png"
 if [[ -f "${PNG}" ]]; then
   exit 0
 fi
-if [[ ! -f "${B64}" ]]; then
+
+decode() {
+  if base64 -D -o "${PNG}" 2>/dev/null; then
+    return 0
+  fi
+  base64 -d > "${PNG}"
+}
+
+if [[ -f "${DIR}/AppIcon.png.b64.aa" ]]; then
+  cat "${DIR}/AppIcon.png.b64.aa" "${DIR}/AppIcon.png.b64.ab" "${DIR}/AppIcon.png.b64.ac" "${DIR}/AppIcon.png.b64.ad" | decode
   exit 0
 fi
-if base64 -D -i "${B64}" -o "${PNG}" 2>/dev/null; then
-  exit 0
+if [[ -f "${DIR}/AppIcon.png.b64" ]]; then
+  decode < "${DIR}/AppIcon.png.b64"
 fi
-base64 -d "${B64}" > "${PNG}"

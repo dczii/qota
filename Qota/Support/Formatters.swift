@@ -20,6 +20,7 @@ enum PercentFormat {
         "\(Int(value.rounded()))%"
     }
 
+    /// Cursor/Claude sometimes send 0...1, sometimes 0...100.
     static func normalized(_ raw: Double) -> Double {
         let percent = raw <= 1.0 ? raw * 100.0 : raw
         return min(100, max(0, percent))
