@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  macos:
+    name: Xcode
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Qota
+        run: |
+          xcodebuild \
+            -project Qota.xcodeproj \
+            -scheme Qota \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
