@@ -257,7 +257,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64",
+				"$(SRCROOT)/scripts/decode-icon.sh",
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.aa",
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ab",
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ac",
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ad",
 			);
 			name = "Decode App Icon";
 			outputFileListPaths = (
@@ -267,7 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PNG=\"${SRCROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png\"\nB64=\"${SRCROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64\"\nif [ -f \"$PNG\" ]; then exit 0; fi\nif [ ! -f \"$B64\" ]; then exit 0; fi\nbase64 -D -i \"$B64\" -o \"$PNG\" 2>/dev/null || base64 -d \"$B64\" > \"$PNG\"\n";
+			shellScript = "bash \"${SRCROOT}/scripts/decode-icon.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
