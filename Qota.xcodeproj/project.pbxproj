@@ -189,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 943EE526FAB226BDB432EC2D /* Build configuration list for PBXNativeTarget "Qota" */;
 			buildPhases = (
+				C0DEC0DEC0DEC0DEC0DEC0DE /* Decode App Icon */,
 				F2AB5FB218DA8B84623F4557 /* Sources */,
 				4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */,
 				55B558C7EF820E6E00E5993B /* Resources */,
@@ -245,6 +246,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0DEC0DEC0DEC0DEC0DEC0DE /* Decode App Icon */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64",
+			);
+			name = "Decode App Icon";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PNG=\"${SRCROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png\"\nB64=\"${SRCROOT}/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64\"\nif [ -f \"$PNG\" ]; then exit 0; fi\nif [ ! -f \"$B64\" ]; then exit 0; fi\nbase64 -D -i \"$B64\" -o \"$PNG\" 2>/dev/null || base64 -d \"$B64\" > \"$PNG\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2AB5FB218DA8B84623F4557 /* Sources */ = {
