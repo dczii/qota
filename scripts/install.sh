@@ -13,6 +13,7 @@ if ! command -v xcodebuild >/dev/null 2>&1; then
 fi
 
 mkdir -p "${DEST}" "${DERIVED}"
+bash "${ROOT}/scripts/decode-icon.sh"
 echo "Building Qota (Release)…"
 xcodebuild \
   -project "${ROOT}/Qota.xcodeproj" \

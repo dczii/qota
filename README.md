@@ -42,7 +42,7 @@ Press **Run**. If signing asks for a team, choose your Personal Team. The app ha
 **Command line (installs to `~/Applications`)**
 
 ```bash
-./scripts/install.sh
+bash scripts/install.sh
 ```
 
 Then launch `~/Applications/Qota.app`. To start it at login, use **Open at login** in the menu-bar popover.
