@@ -258,12 +258,10 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/scripts/decode-icon.sh",
-				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.aa",
-				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ab",
-				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ac",
-				"$(SRCROOT)/Qota/Assets.xcassets/AppIcon.appiconset/AppIcon.png.b64.ad",
+				"$(SRCROOT)/scripts/generate_icon.py",
+				"$(SRCROOT)/scripts/generate-icon.swift",
 			);
-			name = "Decode App Icon";
+			name = "Generate App Icon";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -357,7 +355,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Qota;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_LSUIElement = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Qota contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,7 +388,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Qota;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_LSUIElement = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Qota contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
