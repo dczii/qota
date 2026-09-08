@@ -23,10 +23,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var hud: HUDPanelController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
+        NSApp.setActivationPolicy(.regular)
         hud = HUDPanelController(store: store)
         hud?.setVisible(store.hudVisible)
         store.start()
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        store.hudVisible = true
+        return true
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        false
     }
 
     func applicationWillTerminate(_ notification: Notification) {

@@ -37,7 +37,7 @@ agent login          # Cursor CLI (or just be signed in to the Cursor app)
 open Qota.xcodeproj
 ```
 
-Press **Run**. If signing asks for a team, choose your Personal Team. The app has no Dock icon; look in the menu bar.
+Press **Run**. If signing asks for a team, choose your Personal Team. Qota appears in the **Dock** (three quota bars with a check) and in the menu bar. Click the Dock icon to show the HUD.
 
 **Command line (installs to `~/Applications`)**
 
@@ -49,6 +49,7 @@ Then launch `~/Applications/Qota.app`. To start it at login, use **Open at login
 
 ## What you should see
 
+- **Dock:** a bar-checker icon — three usage bars plus a check. Click it to bring the HUD forward.
 - **Menu bar:** compact `Cl 34%  Cx 25%  Cu $12` (turns orange/red near the cap)
 - **Floating HUD:** a small always-on-top panel you can drag. It stays above other apps and follows you across Spaces. Toggle it from the menu-bar popover.
 - **Per-row states:** signed out, CLI not found, rate limited, or stale (last good numbers plus a reason)

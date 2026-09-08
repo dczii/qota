@@ -15,8 +15,10 @@ decode() {
   base64 -d > "${PNG}"
 }
 
-if [[ -f "${DIR}/AppIcon.png.b64.aa" ]]; then
-  cat "${DIR}/AppIcon.png.b64.aa" "${DIR}/AppIcon.png.b64.ab" "${DIR}/AppIcon.png.b64.ac" "${DIR}/AppIcon.png.b64.ad" | decode
+shopt -s nullglob
+parts=( "${DIR}"/AppIcon.png.b64.[a-z][a-z] )
+if [[ ${#parts[@]} -gt 0 ]]; then
+  cat "${parts[@]}" | decode
   exit 0
 fi
 if [[ -f "${DIR}/AppIcon.png.b64" ]]; then
