@@ -1,7 +1,7 @@
 .PHONY: open install
 
 open:
-	open Qota.xcodeproj
+	open Package.swift
 
 install:
 	./scripts/install.sh

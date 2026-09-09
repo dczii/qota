@@ -16,7 +16,7 @@ struct ClaudeProvider: UsageProvider {
             let snapshot = try parse(data)
             return .ready(snapshot)
         } catch let error as UsageError {
-            return map(error)
+            return error.status
         } catch {
             return .failed("Could not reach Anthropic")
         }
@@ -48,6 +48,13 @@ struct ClaudeProvider: UsageProvider {
         switch response.statusCode {
         case 200 ..< 300:
             return data
+        case 400:
+            // An Anthropic API organization has no plan windows; the account is fine, the numbers just do not exist.
+            if let message = JSONFlex.string(try? JSONFlex.object(from: data), "error", "message"),
+               message.localizedCaseInsensitiveContains("not applicable") {
+                throw UsageError.notApplicable("No plan quota — this is an Anthropic API organization")
+            }
+            throw UsageError.failed("Claude usage HTTP 400")
         case 401, 403:
             throw UsageError.signedOut("Sign in again with Claude Code")
         case 429:
@@ -120,19 +127,5 @@ struct ClaudeProvider: UsageProvider {
             }
         }
         return "claude-code/2.1.80"
-    }
-
-    private func map(_ error: UsageError) -> ProviderStatus {
-        switch error {
-        case .signedOut(let message):
-            return .signedOut(message)
-        case .unavailable(let message):
-            return .unavailable(message)
-        case .rateLimited(let seconds):
-            let retry = seconds.map { Date().addingTimeInterval($0) }
-            return .rateLimited(retryAfter: retry)
-        case .failed(let message):
-            return .failed(message)
-        }
     }
 }

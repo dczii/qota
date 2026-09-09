@@ -16,7 +16,7 @@ struct CodexProvider: UsageProvider {
             if case .unavailable = error, !FileManager.default.fileExists(atPath: authURL().path) {
                 return .signedOut("Sign in with Codex CLI (`codex login`)")
             }
-            return map(error)
+            return error.status
         } catch {
             return .failed("Could not read Codex rate limits")
         }
@@ -91,19 +91,6 @@ struct CodexProvider: UsageProvider {
                 return "\(Int((minutes / 60).rounded()))h"
             }
             return fallback
-        }
-    }
-
-    private func map(_ error: UsageError) -> ProviderStatus {
-        switch error {
-        case .signedOut(let message):
-            return .signedOut(message)
-        case .unavailable(let message):
-            return .unavailable(message)
-        case .rateLimited(let seconds):
-            return .rateLimited(retryAfter: seconds.map { Date().addingTimeInterval($0) })
-        case .failed(let message):
-            return .failed(message)
         }
     }
 }

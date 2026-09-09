@@ -4,80 +4,88 @@ A tiny macOS menu-bar app with an always-on-top HUD that shows remaining **plan 
 
 - **Claude Code** — 5-hour and 7-day windows
 - **Codex CLI** — 5-hour / weekly windows (and credits when present)
-- **Cursor CLI** (same Cursor account as the editor) — included spend or request allowance
+- **Cursor** (same account as the editor) — share of the current billing period used
 
-It is open source. Anyone can clone this repository, build it with Xcode, and run it locally. There is no App Store listing and no extra account to create.
+It is open source. Clone it, build it, run it locally. There is no App Store listing, no installer to trust, and no account to create.
 
-Qota never sends tokens to a third-party server. It only reads the logins already on your Mac and calls each vendor’s own usage endpoint.
+Qota never sends tokens to a third-party server. It only reads the logins already on your Mac and calls each vendor's own usage endpoint.
 
-## Install from GitHub
+## Install
 
-You need a Mac with **macOS 14+** and **Xcode 15+**.
-
-1. Clone this repo:
+You need a Mac running **macOS 14 Sonoma or later**, with the **Xcode command line tools** (for the Swift 5.9+ toolchain). Check with `swift --version`; if that fails, run `xcode-select --install`.
 
 ```bash
 git clone https://github.com/dczii/qota.git
 cd qota
-```
-
-2. Sign in to the tools you want to monitor (on this Mac):
-
-```bash
-claude auth login    # Claude Code
-codex login          # Codex CLI
-agent login          # Cursor CLI (or just be signed in to the Cursor app)
-```
-
-3. Build and run — pick one:
-
-**Xcode**
-
-```bash
-open Qota.xcodeproj
-```
-
-Press **Run**. If signing asks for a team, choose your Personal Team. The app has no Dock icon; look in the menu bar.
-
-**Command line (installs to `~/Applications`)**
-
-```bash
 ./scripts/install.sh
 ```
 
-Then launch `~/Applications/Qota.app`. To start it at login, use **Open at login** in the menu-bar popover.
+That is the whole install. The script builds a release binary with Swift Package Manager, wraps it in `~/Applications/Qota.app`, ad-hoc signs it, and launches it.
+
+Qota has **no Dock icon** — look for it in the menu bar, on the right.
+
+To install somewhere else, set `INSTALL_DIR`:
+
+```bash
+INSTALL_DIR=/Applications ./scripts/install.sh
+```
+
+To update later, `git pull` and run the script again. It replaces the existing copy. To uninstall, quit Qota from its popover and `rm -rf ~/Applications/Qota.app`.
+
+### Signing in
+
+Qota reads logins that already exist on your Mac; it never asks for credentials itself. Sign in to whichever tools you want to watch:
+
+```bash
+claude auth login   # Claude Code
+codex login         # Codex CLI
+agent login         # Cursor CLI, or just be signed in to the Cursor app
+```
+
+You do not need all three. Any tool you have not signed in to simply shows "signed out" in its row.
+
+The first time Qota reads the Cursor CLI token, macOS may ask for Keychain permission. Approve it once.
+
+### Developing
+
+```bash
+open Package.swift   # or: make open
+```
+
+Press **Run** in Xcode. Running the bare executable this way skips the app bundle, so **Open at login** is disabled in that mode — use `./scripts/install.sh` for a real install.
 
 ## What you should see
 
-- **Menu bar:** compact `Cl 34%  Cx 25%  Cu $12` (turns orange/red near the cap)
-- **Floating HUD:** a small always-on-top panel you can drag. It stays above other apps and follows you across Spaces. Toggle it from the menu-bar popover.
-- **Per-row states:** signed out, CLI not found, rate limited, or stale (last good numbers plus a reason)
+- **Menu bar:** a compact summary like `Cx 1%  Cu 23%`, which turns orange then red as a window approaches its cap
+- **Floating HUD:** a small always-on-top panel you can drag anywhere. It stays above other apps and follows you across Spaces. Toggle it from the menu-bar popover
+- **Last updated:** both the popover and the HUD show how old the numbers are, with a refresh button to fetch immediately
+- **Per-row states:** signed out, CLI not found, rate limited, or stale (last good numbers plus the reason they did not update)
 
-Claude is polled slowly (about every 3 minutes) because Anthropic’s usage endpoint rate-limits aggressive clients. Codex and Cursor refresh about once a minute while the HUD is visible.
+Claude is polled slowly, about every 3 minutes, because Anthropic's usage endpoint rate-limits aggressive clients. Codex and Cursor refresh about once a minute. A failed poll never overwrites good numbers — the row keeps the last reading and tells you why it is stale.
 
 ## How quota is read
 
 | Tool | Local login | Source of the numbers |
 | --- | --- | --- |
-| Claude Code | `~/.claude/.credentials.json` or Keychain item `Claude Code-credentials` | `GET https://api.anthropic.com/api/oauth/usage` |
-| Codex CLI | Codex’s own login (`~/.codex/auth.json`); Qota does not copy the token | `codex app-server` JSON-RPC `account/rateLimits/read` |
+| Claude Code | `~/.claude/.credentials.json`, else Keychain item `Claude Code-credentials` | `GET https://api.anthropic.com/api/oauth/usage` |
+| Codex CLI | Codex's own login (`~/.codex/auth.json`); Qota does not copy the token | `codex app-server` JSON-RPC `account/rateLimits/read` |
 | Cursor | Cursor app `state.vscdb`, else CLI Keychain `cursor-access-token`, else `~/.cursor/auth.json` | `POST https://api2.cursor.sh/aiserver.v1.DashboardService/GetCurrentPeriodUsage`, with `/auth/usage` as fallback |
 
-These vendor APIs are **undocumented and can change**. If a row fails after a CLI update, open an issue. App Sandbox is off on purpose so the app can read those local files.
+Anthropic reports plan quota only for subscription accounts. If your Claude Code login is an API key on an **API organization**, the usage endpoint answers `Usage limits are not applicable to API organizations`, and the Claude row says exactly that — there is no plan window to show. Sign in with a Pro or Max subscription and the row fills in.
 
-The first Cursor CLI Keychain read may show a macOS permission prompt. Approve it once.
+These vendor APIs are **undocumented and can change**. If a row breaks after a CLI update, please open an issue. App Sandbox is off on purpose, so the app can read those local files.
 
 ## Requirements
 
 - macOS 14 Sonoma or later
-- Xcode 15 or later (to build)
-- At least one of: Claude Code, Codex CLI, Cursor / Cursor CLI, signed in on this Mac
+- Xcode 15 or later, or just the command line tools, for the Swift 5.9+ toolchain
+- At least one of Claude Code, Codex CLI, or Cursor, signed in on this Mac
 
-A GUI app does not inherit your Homebrew/nvm `PATH`. Qota looks in common locations (`/opt/homebrew/bin`, `/usr/local/bin`, nvm, …) and a login shell for `codex` and `claude`.
+A GUI app does not inherit your Homebrew or nvm `PATH`. Qota looks in the usual places (`/opt/homebrew/bin`, `/usr/local/bin`, `~/.local/bin`, nvm, and others) and falls back to a login shell to find `codex` and `claude`.
 
 ## Privacy
 
-- Tokens are read in memory and never written to Qota’s own files
+- Tokens are read into memory and never written to Qota's own files
 - Network calls go only to Anthropic, OpenAI/ChatGPT (via Codex), and Cursor
 - No analytics, no crash reporter, no account of our own
 

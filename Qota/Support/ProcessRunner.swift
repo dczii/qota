@@ -42,7 +42,7 @@ enum ProcessRunner {
 
             let lock = NSLock()
             var settled = false
-            let finish: (Result<Result, Error>) -> Void = { outcome in
+            let finish: (Swift.Result<Result, Error>) -> Void = { outcome in
                 lock.lock()
                 defer { lock.unlock() }
                 guard !settled else { return }

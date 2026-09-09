@@ -20,9 +20,10 @@ enum PercentFormat {
         "\(Int(value.rounded()))%"
     }
 
+    /// Every vendor reports utilisation on a 0-100 scale, so this only clamps.
+    /// Rescaling values below 1 as fractions would turn a genuine "1 percent used" into a full bar.
     static func normalized(_ raw: Double) -> Double {
-        let percent = raw <= 1.0 ? raw * 100.0 : raw
-        return min(100, max(0, percent))
+        min(100, max(0, raw))
     }
 }
 
@@ -31,6 +32,7 @@ enum MoneyFormat {
         let dollars = cents / 100.0
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
         formatter.currencyCode = "USD"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = dollars.rounded() == dollars ? 0 : 2
