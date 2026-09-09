@@ -1,0 +1,15 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  macos:
+    name: Swift Package Manager
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Qota
+        run: swift build -c release
